@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
+// Import the model (burger.js) to use its database functions.
 const burger = require('../models/burger.js');
 
 // Create all our routes and set up logic within those routes where required.
@@ -28,9 +28,9 @@ router.put('/api/burgers/:id', (req, res) => {
 
   console.log('condition', condition);
 
-  cat.update(
+  burger.update(
     {
-      sleepy: req.body.sleepy,
+      devoured: req.body.devoured,
     },
     condition,
     (result) => {

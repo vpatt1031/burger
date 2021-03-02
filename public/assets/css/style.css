@@ -35,15 +35,10 @@ body {
   #devourbtn {
       float: right;
   }
-  /* #lefthead {
-    background-color:hsl(56, 93%, 50%);
-    color: white;
-    text-align: center;
-    font-size: 1.2em;
-  } */
-  #righthead {
-      text-align: right;
+  .change-burger {
+      float: right;
   }
+  
   .panel-heading{
       text-align: left;
 

@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         button.addEventListener('click', (e) => {
           // Grabs the id of the element that goes by the name, "id"
           const id = e.target.getAttribute('data-id');
-          const newDevouredBurger = e.target.getAttribute('data-newburger');
+          const devouredBurger = e.target.getAttribute('data-newburger');
   
           const newEatenBurger = {
-            devoured: newDevouredBurger,
+            devoured: devouredBurger,
           };
   
           fetch(`/api/burgers/${id}`, {
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             // Check that the response is all good
             // Reload the page so the user can see the new quote
             if (response.ok) {
-              console.log(`changed sleep to: ${newEatenBurger}`);
+              console.log(`changed sleep to: ${devouredBurger}`);
               location.reload('/');
             } else {
               alert('something went wrong!');
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       createBurger.addEventListener('submit', (e) => {
         e.preventDefault();
   
-        // Grabs the value of the textarea that goes by the name, "quote"
+        // Grabs the value of the textarea that goes by the name
         const newBurger = {
           name: document.getElementById('ca').value.trim(),
         };

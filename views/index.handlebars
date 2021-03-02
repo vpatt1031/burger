@@ -21,24 +21,25 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2>Burgers to Devour!</h2>
+                        <h2>Burgers to Devour</h2>
                     </div>{{!div panel-heading}}
                     <hr>
                     <div class="panel-body">
                         <ul>
                             {{#each burgers}}
                             {{#unless devoured}}
-                            {{!-- <h3>{{burger_name}}</h3> --}}
+                            {{> burger-block eaten=true}}
                             <span><strong>{{id}}.{{burger_name}}</strong></span>
-                            <button id="devourbtn" class=".change-eaten" data-id="{{id}}" data-neweats=true>{{#if
-                                devoured}}Devoured!{{else}}Devour{{/if}}<span
-                                    class="material-icons">dining</span></button>
+                            {{!-- <button id="devourbtn" class=".change-eaten" data-id="{{id}}"></button> --}}
                             <hr>
-                            {{!-- <button class=".change-eaten" data-id={{id}} data-newburger=true>
-                                {{#if devoured}}devoured!{{else}}devour me!{{/if}}</button> --}}
                             {{/unless}}
                             {{/each}}
                         </ul>
+                        {{!-- <data-newburger=""=true> --}}
+                                {{!-- {{#if devoured}}Devoured!{{else}}Devour{{/if}} --}}
+
+                                {{!-- <button class=".change-eaten" data-id={{id}} data-newburger=true>
+                                    {{#if devoured}}devoured!{{else}}devour me!{{/if}}</button> --}}
                     </div>
                 </div> {{!div panel-body}}
             </div> {{!div for panel-default}}
@@ -55,8 +56,9 @@
                         <div class="panel-body">
                             <ul>
                                 {{#each burgers}}
-                                {{#if devoured}}
-                                <h3>{{id}}.{{burger_name}}</h3>
+                                {{#if this.devoured}}
+                                {{> burger-block eaten=true}}
+                                <h3>{{this.id}}.{{this.burger_name}}</h3>
                                 {{/if}}
                                 {{/each}}
                             </ul>
