@@ -1,52 +1,71 @@
 <div class="conatainer">
 
     <div class="jumbotron">
-        <h1>EAT-DA-BURGER</h1>
+        <h1 class="color-change">EAT-DA-BURGER</h1>
         <br>
         <h2>Add A Burger</h2>
         <form id="create-form">
             <div class="form-group">
-                <label for="ca">New Burgers:</label>
+                <label for="ca" class="color-change">New Burgers:</label>
                 <input type="text" id="ca" name="name">
             </div>
-            <button type="submit">Add Burger</button>
+            <button type="submit" class="btn btn-warning">Add Burger</button>
         </form>
     </div> {{!jumbotron}}
-</div>{{!container}} 
+</div>{{!div for container for add a burger}}
 <br>
 {{!Burgers that are uneaten}}
-<div class="row">
-    <div class="col-sm-6">
-        <div class="panel panel-default">
-            <div class="panel-heading" id="lefthead"><strong>Burgers to Devour!</strong></div>
-            <div class="panel-body">
-                <ul>
-            {{#each burgers}}
-            {{#unless devoured}}
-            {{!-- <h3>{{burger_name}}</h3> --}}
-            <p>{{id}}.{{burger_name}}</p><br>
-            <p><button class=".change-eaten" data-id="{{id}}" data-neweats=true>{{#if devoured}}Devoured!{{else}}Devour
-                    Me!{{/if}}</button></p>
-            {{!-- <button class=".change-eaten" data-id={{id}} data-newburger=true>
-                {{#if devoured}}devoured!{{else}}devour me!{{/if}}</button> --}}
-            {{/unless}}
-            {{/each}}
-        </ul>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2>Burgers to Devour!</h2>
+                    </div>{{!div panel-heading}}
+                    <hr>
+                    <div class="panel-body">
+                        <ul>
+                            {{#each burgers}}
+                            {{#unless devoured}}
+                            {{!-- <h3>{{burger_name}}</h3> --}}
+                            <span><strong>{{id}}.{{burger_name}}</strong></span>
+                            <button id="devourbtn" class=".change-eaten" data-id="{{id}}" data-neweats=true>{{#if
+                                devoured}}Devoured!{{else}}Devour{{/if}}<span
+                                    class="material-icons">dining</span></button>
+                            <hr>
+                            {{!-- <button class=".change-eaten" data-id={{id}} data-newburger=true>
+                                {{#if devoured}}devoured!{{else}}devour me!{{/if}}</button> --}}
+                            {{/unless}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div> {{!div panel-body}}
+            </div> {{!div for panel-default}}
+        </div> {{!div for col-sm-6}}
 
-            </div>
-        </div>
-
-        
+        {{!-- <div class="row"> --}}
+            <div class="col-sm-6">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2>Devoured Burgers</h2>
+                        </div>
+                        <hr>
+                        <div class="panel-body">
+                            <ul>
+                                {{#each burgers}}
+                                {{#if devoured}}
+                                <h3>{{id}}.{{burger_name}}</h3>
+                                {{/if}}
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div> {{!div for panel-body}}
+                </div> {{!div for col-sm-6}}
+            </div> {{!div for row}}
+        </div> {{!div for row}}
+        {{!-- End row for eat burger burgers that have been eaten --}}
     </div>
-    {{!-- End div for burgers to be eaten section --}}
-    <h2>Eaten Burgers</h2>
-
-    <ul>
-        {{#each burgers}}
-        {{#if devoured}}
-        <h3>{{id}}.{{burger_name}}</h3>
-        {{/if}}
-        {{/each}}
-    </ul>
+    {{!-- End div container for burgers to be eaten section --}}
 </div>
-{{!-- End row for eat burger burgers that have been eaten --}}

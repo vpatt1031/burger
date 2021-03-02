@@ -1,11 +1,13 @@
 .jumbotron {
-    background-image: url("https://wallpapercave.com/wp/wp2186059.jpg");
+    background-image: url("/assets/img/burgerimage3.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     margin-top: 5px;
 }
-
+.color-change{
+    color:#fff
+}
 h1{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: left;
@@ -29,4 +31,46 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 25%;
+  }
+  #devourbtn {
+      float: right;
+  }
+  /* #lefthead {
+    background-color:hsl(56, 93%, 50%);
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+  } */
+  #righthead {
+      text-align: right;
+  }
+  .panel-heading{
+      text-align: left;
+
+  }
+
+  /* css for images from google fonts */
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
   }
