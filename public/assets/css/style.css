@@ -43,6 +43,18 @@ body {
       text-align: left;
 
   }
+  /* @media (min-width: 700px)
+{
+		.main{
+			height: 60vh;
+			overflow: auto;
+		} */
+
+  /* @media (max-width: 3000px) and (orientation: landscape){
+	.main{
+		height: auto;
+        overflow: auto;
+	} */
 
   /* css for images from google fonts */
   .material-icons {
