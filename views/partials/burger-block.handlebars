@@ -1,9 +1,13 @@
 <ul>
 	{{name}}
-
+	{{#if eaten}}
 	<button class="change-burger" data-id="{{id}}" data-newburger="{{eaten}}">
-		{{#if eaten}}Eat Me!<span class="material-icons">dining</span>{{else}}Eaten!{{/if}}
+		Eat Me! <span data-id={{id}} class="material-icons">dining</span>
 	</button>
-
+	{{else}}
+	<button class="change-delete" data-id="{{this.id}}">
+		Eaten! <span data-id={{this.id}} class="material-icons">delete</span>
+	</button>
+	{{/if}}
 	{{!-- <button class="delete-cat" data-id="{{this.id}}">DELETE!</button> --}}
 </ul>

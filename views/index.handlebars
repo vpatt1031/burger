@@ -30,16 +30,10 @@
                             {{#unless devoured}}
                             {{> burger-block eaten=true}}
                             <span><strong>{{id}}.{{burger_name}}</strong></span>
-                            {{!-- <button id="devourbtn" class=".change-eaten" data-id="{{id}}"></button> --}}
                             <hr>
                             {{/unless}}
                             {{/each}}
                         </ul>
-                        {{!-- <data-newburger=""=true> --}}
-                                {{!-- {{#if devoured}}Devoured!{{else}}Devour{{/if}} --}}
-
-                                {{!-- <button class=".change-eaten" data-id={{id}} data-newburger=true>
-                                    {{#if devoured}}devoured!{{else}}devour me!{{/if}}</button> --}}
                     </div>
                 </div> {{!div panel-body}}
             </div> {{!div for panel-default}}
@@ -56,9 +50,10 @@
                         <div class="panel-body">
                             <ul>
                                 {{#each burgers}}
-                                {{#if this.devoured}}
-                                {{> burger-block eaten=true}}
-                                <h3>{{this.id}}.{{this.burger_name}}</h3>
+                                {{#if devoured}}
+                                {{> burger-block eaten=false}}
+                                <span><strong>{{id}}.{{burger_name}}</strong></span>
+                                <hr>
                                 {{/if}}
                                 {{/each}}
                             </ul>

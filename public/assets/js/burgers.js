@@ -4,19 +4,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   
     // UPDATE
-    const changeBurgerEaten = document.querySelectorAll('.change-eaten');
+    const changeBurgerEaten = document.querySelectorAll('.change-burger');
   
     // Set up the event listener for the create button
     if (changeBurgerEaten) {
       changeBurgerEaten.forEach((button) => {
         button.addEventListener('click', (e) => {
           // Grabs the id of the element that goes by the name, "id"
-          const id = e.target.getAttribute('data-id');
-          const devouredBurger = e.target.getAttribute('data-newburger');
+          const id = e.target.dataset.id;
+          console.log(e.target)
+          console.log(id)
+          // const devouredBurger = e.target.getAttribute('data-newburger');
   
-          const newEatenBurger = {
-            devoured: devouredBurger,
-          };
+          // const newEatenBurger = {
+          //   devoured: devouredBurger,
+          // };
   
           fetch(`/api/burgers/${id}`, {
             method: 'PUT',
@@ -26,15 +28,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
             },
   
             // make sure to serialize the JSON body
-            body: JSON.stringify(newEatenBurger),
+            // body: JSON.stringify(newEatenBurger),
           }).then((response) => {
             // Check that the response is all good
             // Reload the page so the user can see the new quote
             if (response.ok) {
-              console.log(`changed sleep to: ${devouredBurger}`);
+              
               location.reload('/');
             } else {
-              alert('something went wrong!');
+              // alert('something went wrong!');
+              console.log(response.message)
             }
           });
         });
@@ -75,22 +78,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   
     // DELETE
-    const deleteCatBtns = document.querySelectorAll('.delete-cat');
-  
+    const deleteBurgerBtns = document.querySelectorAll('.change-delete');
+
     // Set up the event listeners for each delete button
-    deleteCatBtns.forEach((button) => {
+    deleteBurgerBtns.forEach((button) => {
       button.addEventListener('click', (e) => {
         const id = e.target.getAttribute('data-id');
   
         // Send the delete request
-        fetch(`/api/cats/${id}`, {
+        fetch(`/api/burgers/${id}`, {
           method: 'DELETE',
         }).then((res) => {
           console.log(res);
-          console.log(`Deleted cat: ${id}`);
-  
-          // Reload the page
-          location.reload();
+          console.log(`Deleted burger: ${id}`);
+
+        // Reload the page
+        location.reload();
         });
       });
     });

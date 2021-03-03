@@ -32,7 +32,7 @@ body {
     margin-right: auto;
     width: 25%;
   }
-  #devourbtn {
+  .change-delete {
       float: right;
   }
   .change-burger {
